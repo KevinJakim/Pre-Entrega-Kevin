@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.video{
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    position:center;
+    top: 50%;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+    text-align: center;
+    overflow: hidden;
+    height: 100vh;
+}
+/*Inicio de Header y Logo*/
+header{
+    height: 100vh;
+    width: 100vh;
+}
+/*Navbar de Inicio de sesion, Contacto, Ayuda*/
+.navbar{
+    position: initial;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+.navbar a{
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.navbar .logo{
+    margin-left: -3%;
+    margin-top: -5%;
+}
+
+.navbar .nav-links ul{
+    display: flex;
+}.navbar .nav-links ul li{
+    margin: 0 25px;
+}
+.navbar .nav-links ul li.active a{
+    color: rgb(248, 80, 80);
+    font-weight: 600;
+}
+
+.navbar .menu-hamburguesa{
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 35px;
+}
+/*Fin Navbar de Inicio de sesion, Contacto, Ayuda*/
+/*Fin de Header y Logo*/
+
+
+/*Diseño de Botones mas simples*/
+input#boton1{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+input#boton2{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+input#boton3{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+/*Fin de Diseño de Botones mas simples*/
+
+/*Inicio de Botones*/
+label.botones{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 999px;
+    background-color: transparent;
+    margin: 68vh 6px 0 6px;
+    z-index: 2;
+    cursor: pointer;
+    transition-duration: .4s;
+}
+/*Fin de Botones*/
+
+/*Inicio de Configuraciones de Imagenes*/
+.prenda{
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 102vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition-duration: .3s;
+    opacity: 1;
+}
+/*Fin de Configuraciones de Imagenes*/
+
+/*Inicio de Insercion de Imagenes*/
+ .hoodie{
+    background-image: url(https://i.postimg.cc/xdP0JDSs/hoodie.jpg);
+ }
+ .remera{
+    background-image: url(https://i.postimg.cc/PrZNX7N7/remera.jpg);
+ }
+
+ .bikini{
+    background-image: url(https://i.postimg.cc/yxJq12Pr/bikini.jpg);
+ }
+/*Fin de Insercion de Imagenes*/
+
+/*Inicio de Configuracion de Botones*/
+input:checked+label {
+    background-color: rgb(255, 255, 255);
+}
+
+input:focus+label.botones{
+    box-shadow: 0 0 0 5px rgba(71, 70, 70, 0.356),  0 0 18px rgb(255, 255, 255)
+}
+ 
+input:checked~.prenda{
+    transform: translateX(100%);
+}
+
+input:checked+label+.prenda{
+    transform: translateX(0);
+    opacity: 1;
+}
+/*Fin de Configuracion de Botones*/
+
+
+/*************************************/
+/*************************************/
+/*Pagina de Inicio de Sesion*/
+/*Caja del formulario*/
+.formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    border-radius: 15px;
+    background-color: white;
+}
+/*Titulo:INGRESAR del formulario*/
+.formulario h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid silver;
+}
+.formulario form{
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+/*Campos para rellenar del formulario*/
+form .username{
+    position: relative;
+    border-bottom: 1px solid #adadad;
+}
+.username input{
+    width: 100%;
+    padding: 25px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.username label{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+.username span::before{
+    position: center;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    transition: .5s;
+}
+/*Transicion para cuando hacemos click en el campo a llenar desaparezca lo pedido del campo*/
+.username input:focus ~ label,
+.username input:focus ~ label:hover{
+    top: 15px;
+    color: #00000000;
+}
+
+.username input:focus ~ span::before,
+.username input:focus ~ span::before{
+    width: 50%;
+}
+/*Boton de Iniciar Sesion*/
+input#campo3[type="submit"]{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 50%;
+    height: 50px;
+    border: 2px solid;
+    background: #323232;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+/*************************************/
+/*************************************/
+/*Fin de Pagina de Inicio de Sesion*/
+/*************************************/
+/*************************************/
+
+
+/*Inicio de Pagina de Contacto*/
+/*************************************/
+/*Inicio de Caja de contacto*/
+.container-form{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+    margin-top: 50px;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    border-radius: 15px;
+}
+.container-form h2{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-size: 35px
+}
+.container-form p{
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.container-form a{
+    font-size: 17px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color: rgb(104, 104, 104);
+    font-weight: 700;
+}
+.container-form a i{
+    color: rgb(49, 49, 49);
+    margin-right: 10px;
+}
+.container-form form .campo, textarea{
+    margin-top: 10px;
+    margin-left: -15px;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: 0px;
+}
+.container-form form textarea{
+    max-width: 530px;
+    min-width: 530px;
+    min-height: 140px;
+    max-height: 150px;
+}
+.container-form .btn-enviar{
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: 0px;
+    background: #323232;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.container-form .btn-enviar:hover{
+    background: #747474;
+}
+/*Fin de la pestaña Contacto*/
+/*************************************/
+
+
+/*Inicio de Pagina de Promociones*/
+.container-promos{
+    height: 525px;
+    max-width: 1120px;
+    margin: auto;
+    margin-top: 50px;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "promo-1 promo-2 promo-3"
+      "promo-4 promo-5 promo-6";
+}
+ .promo-1{ 
+    grid-area: promo-1; 
+    margin-top: 25px;
+    margin-left: 25px;
+}
+  
+ .promo-2 { 
+    grid-area: promo-2; 
+    margin-top: 25px;
+    margin-left: 25px;
+}
+  
+ .promo-3 { 
+    grid-area: promo-3; 
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 250px;
+}
+  
+ .promo-4 { 
+    grid-area: promo-4; 
+    margin-top: 25px;
+    margin-left: 25px;
+}
+  
+ .promo-5 { 
+    grid-area: promo-5; 
+    margin-top: 25px;
+    margin-left: 25px;
+}
+  
+ .promo-6 { 
+    grid-area: promo-6; 
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 250px;
+}
+
+
+
+/*************************************/
+/*MEDIA QUERY CONTACTOS = Dispositivos Pequeños 1000px*/
+@media (max-width: 1000px){
+    body{
+        overflow:scroll;
+    }
+
+    /*Caja de Formulario*/
+    .container-form{
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, -30%);
+        width: 650px;
+        height: 370px;
+        border-radius: 15px;
+        background-color: white;
+    }
+    .container-form form .campo, textarea{
+        margin-top: 10px;
+        margin-left: -15px;
+        width: 100%;
+        padding: 15px 10px;
+        font-size: 16px;
+        border: 1px solid #dbdbdb;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .container-form form textarea{
+        max-width: 530px;
+        min-width: 300px;
+        min-height: 140px;
+        max-height: 150px;
+    }
+    .container-form h2{
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 35px
+    }
+    .container-form p{
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .container-form a{
+        margin-left: 10px;
+        font-size: 17px;
+        display: inline-block;
+        text-decoration: none;
+        width: 100%;
+        margin-bottom: 15px;
+        color: rgb(104, 104, 104);
+        font-weight: 500;
+    }
+    .container-form a i{
+        color: rgb(49, 49, 49);
+        margin-right: 10px;
+    }
+    .container-form .btn-enviar{
+        margin-right: 45px;
+        margin-bottom: 800px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        outline: 0px;
+        background: #323232;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 300ms ease;
+    }
+    /*Caja de Promociones*/
+    .container-promos {
+        height: 1500px;
+        width: 500px;
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr 1fr  1fr  1fr  1fr; 
+        grid-template-areas: 
+          "promo-1" 
+          "promo-2"
+          "promo-3" 
+          "promo-4"
+          "promo-5" 
+          "promo-6"; 
+    }
+     .promo-1{ 
+        width: .5%;
+        height: 220px;
+        margin-left: 75px;
+    }
+     .promo-2{ 
+        width: .5%;
+        height: 220px;
+        margin-left: 75px;
+     }
+     .promo-3{ 
+        width: .5%;
+        height: 220px;
+        margin-left: 75px;
+     }
+     .promo-4{ 
+        width: .5%;
+        height: 220px;
+        margin-left: 75px;
+     }
+     .promo-5{ 
+        width: .5%;
+        height: 220px;
+        margin-left: 75px;
+     }
+     .promo-6{ 
+        width: .5%;
+        height: 220px;
+        margin-left: 75px;
+    }
+}
+
+
+/*************************************/
+/*MEDIA QUERY = Dispositivos Pequeños 750px*/
+@media (max-width: 750px) {
+    .navbar{
+        padding: 0;
+    }
+    .navbar .logo{
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+    .navbar .menu-hamburguesa{
+        display: block;
+        Z-index: 10px;
+    }
+    .nav-links{
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.299);
+        backdrop-filter: blur(8px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+    .mobile-menu{
+        margin-left: 0;
+    }
+    .nav-links ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar .nav-links ul li{
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+    .navbar .logo{
+        position: relative;
+        margin-left: -5%;
+    }
+    
+    label.botones{
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 999px;
+        background-color: transparent;
+        margin: 90vh 6px 0 6px;
+        z-index: 2;
+        cursor: pointer;
+        transition-duration: .4s;
+    }
+    .formulario{
+        position: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 350px;
+        border-radius: 15px;
+        background-color: white;
+    }
+    .container-form{
+        position: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, 30%);
+        width: 570px;
+        height: 360px;
+        border-radius: 15px;
+        background-color: white;
+    }
+    .container-form form .campo, textarea{
+        margin-top: 10px;
+        margin-left: -15px;
+        width: 100%;
+        padding: 15px 10px;
+        font-size: 16px;
+        border: 1px solid #dbdbdb;
+        margin-bottom: 20px;
+        border-radius: 3px;
+    }
+    .container-form form textarea{
+        max-width: 530px;
+        min-width: 300px;
+        min-height: 100px;
+        max-height: 150px;
+    }
+    .container-form h2{
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 35px
+    }
+    .container-form p{
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .container-form a{
+        margin-left: 10px;
+        font-size: 17px;
+        display: inline-block;
+        text-decoration: none;
+        width: 100%;
+        margin-bottom: 15px;
+        color: rgb(104, 104, 104);
+        font-weight: 500;
+    }
+    .container-form a i{
+        color: rgb(49, 49, 49);
+        margin-right: 10px;
+    }
+    .container-form .btn-enviar{
+        margin-right: 5px;
+        margin-bottom: 800px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        outline: 0px;
+        background: #323232;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 300ms ease;
+    }
+}
+
+

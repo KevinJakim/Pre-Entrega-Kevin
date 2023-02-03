@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Promociones</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo"> <img src="https://i.postimg.cc/WDfbvPTw/logo.png"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="promociones.html">Promociones
+                </a></li>
+            </ul>
+        </div>
+        <img src="https://i.postimg.cc/GmsMgsPW/menu.png" alt="menu
+        hamburguesa" class="menu-hamburguesa">
+    </nav> 
+    <div class="container-promos">
+        <div class="wow animate__animated animate__pulse promo-1">
+            <img src="https://i.postimg.cc/Hnjny6sF/3cuotas.jpg" alt="">
+        </div>
+        <div class="wow animate__animated animate__pulse promo-2">
+            <img src="https://i.postimg.cc/GhChr3vZ/6cuotas.jpg" alt="">
+        </div>
+        <div class="wow animate__animated animate__pulse promo-3">
+            <img src="https://i.postimg.cc/zXxmMq7w/12cuotas.jpg" alt="">
+        </div>
+        <div class="wow animate__animated animate__pulse promo-4">
+            <img src="https://i.postimg.cc/43qH1Cjs/Bprov1.jpg" alt="">
+        </div>
+        <div class="wow animate__animated animate__pulse promo-5">
+            <img src="https://i.postimg.cc/6pSpkrch/Bsnr.jpg" alt="">
+        </div>
+        <div class="wow animate__animated animate__pulse promo-6">
+            <img src="https://i.postimg.cc/pdzR3gp2/Bsnf.jpg" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    const menuHamburger = document.querySelector(".menu-hamburguesa")
+    const navLinks = document.querySelector(".nav-links")
+
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+    })
+    </script>
+<script src="./js/wow.js"></script>
+<script>
+    new WOW().init();
+    </script>
+</html>

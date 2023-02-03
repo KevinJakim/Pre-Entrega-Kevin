@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo"> <img src="https://i.postimg.cc/WDfbvPTw/logo.png"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+            </ul>
+        </div>
+        <img src="https://i.postimg.cc/GmsMgsPW/menu.png" alt="menu
+        hamburguesa" class="menu-hamburguesa">
+    </nav>  
+    <div class="formulario">
+        <h1>Ingresar</h1>
+        <form method="post">
+            <div class="username">
+                <input type="text" id="campo1" required>
+                <label class="sesion">Nombre de usuario</label>
+            </div>
+            <div class="username">
+                <input type="password" id="campo2" required>
+                <label class="sesion">Contraseña</label>
+            </div>
+            <input type="submit" value="Iniciar" id="campo3" alt="index.html">
+        </form>
+    </div>
+</body>
+<script>
+    const menuHamburger = document.querySelector(".menu-hamburguesa")
+    const navLinks = document.querySelector(".nav-links")
+
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+    })
+    </script>
+</html>
